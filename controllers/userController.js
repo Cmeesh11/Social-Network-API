@@ -83,7 +83,7 @@ module.exports = {
     try {
       const user = await User.findOneAndUpdate(
         { _id: req.params.userId },
-        { $pull: { friends: await User.findOneAndDelete({ _id: req.params.friendId }) } },
+        { $pull: { friends: await User.findOne({ _id: req.params.friendId }) } },
         { new: true }
       )
       

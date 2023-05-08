@@ -10,4 +10,5 @@ Using a testing API such as Insomnia or Postman, you should be able to reference
 
 After cloning the repo, run `npm install` and `npm start` to get the server up and running. From there, you should be able to access the routes using a testing API.
 
-##
+## Walkthrough Video
+[Link to video](https://drive.google.com/file/d/1NUxB5L6t1o_yE-jWMPNnKNicHRttebOp/view)
