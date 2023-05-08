@@ -1,5 +1,6 @@
-const { Thought } = require("../models");
+const { Thought, User } = require("../models");
 const { ObjectId } = require('mongoose').Types;
+
 module.exports = {
   async getThoughts(req, res) {
     try {
@@ -30,6 +31,10 @@ module.exports = {
   async createThought(req, res) {
     try {
       const thought = await Thought.create(req.body); 
+      await User.findOneAndUpdate(
+        { username: req.body.username }, 
+        { $push: { thoughts: thought } }
+        )
       res.status(200).json(thought);
     } catch (err) {
       res.status(500).json(err);
